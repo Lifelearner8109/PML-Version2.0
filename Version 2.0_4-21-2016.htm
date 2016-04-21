@@ -1,0 +1,356 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#0563C1" vlink="#954F72">
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>Here's the GitHub link to my repository.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><a href="https://github.com/Lifelearner8109/PML-Version2.0.git"><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif'>https://github.com/Lifelearner8109/PML-Version2.0.git</span></a></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>Installed Libraries</span></b></p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='color:#555555;margin-bottom:0in;margin-bottom:.0001pt;
+     line-height:normal'><b><span style='font-size:10.5pt;font-family:"Arial",sans-serif'>&#65279;</span></b><span
+     style='font-size:10.5pt;font-family:"Arial",sans-serif'>&#65279;caret</span></li>
+ <li class=MsoNormal style='color:#555555;margin-bottom:0in;margin-bottom:.0001pt;
+     line-height:normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif'>e1071</span></li>
+ <li class=MsoNormal style='color:#555555;margin-bottom:0in;margin-bottom:.0001pt;
+     line-height:normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif'>rattle</span></li>
+ <li class=MsoNormal style='color:#555555;margin-bottom:0in;margin-bottom:.0001pt;
+     line-height:normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif'>rpart</span></li>
+ <li class=MsoNormal style='color:#555555;margin-bottom:0in;margin-bottom:.0001pt;
+     line-height:normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif'>rpart.plot</span></li>
+ <li class=MsoNormal style='color:#555555;margin-bottom:0in;margin-bottom:.0001pt;
+     line-height:normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif'>randomForest</span></li>
+</ol>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>Data Cleaning</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>After loading the training and testing data, the summary()
+function on the training set revealed a significant pattern in missing data. 19,216
+N/A values appeared throughout the data set. Relative to the entire collection
+of 19,622 training observations, 97.9% of the data was missing. N/A values or
+null values are common to large data sets, but the same number of missing
+values across the entire data set implied errors and/or biases that occurred
+during the data collection process. As a way to eliminate these errors/and or
+biases, I removed all variables containing 19,216 N/A values. The following R
+commands completed this task.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>#Remove the NA and Near Zero Variance Variables</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>nzvCols = nearZeroVar(train)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>trainClean=train[,-nzvCols]</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>testClean=test[,-nzvCols]</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>ColsToRemove=which(sapply(trainClean, function(x)
+sum(is.na(x)))&gt;=19216)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>trainReady=trainClean[,-ColsToRemove]</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>testReady=testClean[,-ColsToRemove]</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>Training, Validation and Test Data</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>Before creating any models, I separated the training set into
+training and validation sets. The training set was used to create the models,
+and the validation served as my test set before running the model on the actual
+test data. I did this so that the classification results from the validation
+set would serve as my best estimate of the out-of-sample error. Here is the
+corresponding R code for creating these data sets.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>#Create Training, Validation &amp; Test Data</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>inTraining=createDataPartition(y=trainReady$classe, p=0.7,
+list=FALSE)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>training=trainReady[inTraining,]</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>validation=trainReady[-inTraining,]</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>testing=testReady</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>Model Construction</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>I created the first model using the randomForest package in R
+(see below for the syntax and output).</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>mod1=randomForest(classe~.-X - user_name - raw_timestamp_part_1
+- raw_timestamp_part_2 - cvtd_timestamp, data=training, ntree=200,
+method=&quot;class&quot;)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>pred1=predict(mod1, newdata=validation, type=&quot;class&quot;)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>confusionMatrix(pred1, validation$classe)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>Confusion Matrix and Statistics</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>          Reference</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>Prediction    A    B    C    D    E</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>         A 1673    0    0    0    0</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>         B    0 1139    1    0    0</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>         C    0    0 1025    9    0</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>         D    0    0    0  955    0</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>         E    1    0    0    0 1082</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>Accuracy : 0.9981</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>Out of Sample Error &amp; Cross Validation</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>The random forest model (mod1) was extremely accurate on the
+validation set with an overall accuracy of 99.81%. Cross validation yielded
+similar results (see below for syntax and output).</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>mod2=train(classe~.-X - user_name - raw_timestamp_part_1 -
+raw_timestamp_part_2 - cvtd_timestamp, data=training, method=&quot;rf&quot;,
+trControl=trainControl(method=&quot;cv&quot;, number=3))</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>pred2=predict(mod2, newdata=validation)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>confusionMatrix(pred2, validation$classe)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>Reference</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>Prediction    A    B    C    D    E</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>         A 1672    0    0    0    0</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>         B    1 1137    1    0    0</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>         C    0    2 1022    8    0</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>         D    0    0    3  955    0</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>         E    1    0    0    1 1082</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>Accuracy : 0.9971</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>In summary, cross validation yielded similar results to the
+initial model construction. One of the potential downsides to random forest
+models is overfitting. Therefore, I assume that I will achieve ~90% accuracy on
+the actual test set. Here are my predictions on the test set.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>finalPred=predict(mod1, newdata=test)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'>finalPred</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'> 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#555555'> B  A  B  A  A  E  D  B  A  A  B  C  B  A  E  E  A  B  B  B</span></p>
+
+</div>
+
+</body>
+
+</html>
